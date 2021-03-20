@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing thing</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"/> <!-- 'classic' theme -->
+
+</head>
+<body>
+    <canvas width="1000px" height="1000px"></canvas>
+    <div class="cursor"></div>
+    <div class="menu">
+        <div class="menucontent">
+            <h1>Drawing Thing</h1>
+            <div class="input">
+                <p>Drawing delay</p>
+                <input type="range" min="1" max="100"step="0.1" value="1" id="delayslider">
+                <p id="delay">1</p>
+            </div>
+            <div class="input">
+                <p>Line width</p>
+                <input type="range" min="1" max="100"step="0.1" value="3" id="widthslider">
+                <p id="width">3</p>
+            </div>
+            <div class="input">
+                <p>Color</p>
+                <div type="color" class="color-picker" value="#000000">        </div>
+            </div>
+            <div class="input">
+                <p>Line Smoothing</p>
+                <input type="range" min="0" max="10" step="0.1"value="3" id="detailslider">
+                <p id="detail">3</p>
+            </div>
+            <div class="input">
+                <p>Line Detail</p>
+                <input type="range" min="0" max="10" step="0.1"value="3" id="smoothslider">
+                <p id="smooth">3</p>
+            </div>
+        </div>
+        <span class="material-icons menuarrow">
+            keyboard_arrow_down
+            </span>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
