@@ -14,6 +14,10 @@ const cursor = document.querySelector(".cursor")
 
 const colorpicker = document.querySelector("#colorpicker");
 
+function downloadCanvas(){
+    document.getElementById("downloader").download = "image.png";
+    document.getElementById("downloader").href = document.getElementById("canvas").toDataURL("image/png").replace(/^data:image\/[^;]/, 'data:application/octet-stream');
+}
 
 let settings = {
     width: 3,
@@ -167,14 +171,13 @@ function KeyPress(e) {
     var evtobj = e
     if (evtobj.keyCode == 90 && evtobj.ctrlKey){
     let last = savedCanvases[savedCanvases.length-2]
-    if(!last) return console.log("nope")
+    if(!last) return;
             savedCanvases.pop()
 
     const img = document.createElement("img")
     img.src = last
     img.style.display="none"
     img.onload = ()=>{
-        console.log("reverted")
         ctx.clearRect(0,0,canvas.width,canvas.height);
         ctx.drawImage(img, 0, 0)
         img.remove()
@@ -401,7 +404,6 @@ var drawSmoothedLine = function(line){
     }
     ctx.stroke();
     savedCanvases.push(canvas.toDataURL())
-    console.log("saved canvas")
 }
 
 // smoothing settings

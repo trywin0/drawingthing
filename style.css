@@ -107,9 +107,13 @@ canvas {
 
 }
 
-.menucontent>.input {
-    margin-left: 5rem;
+.menucontent>* {
+    margin-left: 4rem;
 
+}
+
+button {
+    margin-top: 1rem;
 }
 
 .input>* {
@@ -119,4 +123,9 @@ canvas {
 h1 {
     font-size: 1.6em;
 
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
 }
